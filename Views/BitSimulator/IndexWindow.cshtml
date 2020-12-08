@@ -1,0 +1,272 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<nav class="navbar navbar-expand-lg navbar-light" id="navbarPrincipal">
+    <div id="navbarSupportedContent">
+        <ul id="ul-navbar">
+            <li>
+                <div style="color: white; font-size: 1.9em; font-weight: 600">
+                    <a id="title-sistem" asp-action="index" asp-controller="Home">BitSimulator</a>
+                </div>
+            </li>
+            <li style="margin-left: 75%;">
+                <div style="color: white;"><span class="ng-binding" id="delayContainer">0</span>&nbsp;ms</div>
+            </li>
+            <li style="margin-left: 5%;">
+                <div id="right">
+                    <input id="regulador" type="range" min="100" max="500" step="50" class="ng-pristine ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step ng-touched">
+                </div>
+            </li>
+            <li style="margin-left: 5%;">
+                <button width="50px" height="50px" class="botaoiniciar btn btn-success btn-sm mr-3"
+                    onclick="IniciarPercusoDeInstrucoes()">
+                    Iniciar
+                </button>
+            </li>
+            <li>
+                <input id="EntradaDeInstrucao" placeholder="Inserir Comando" aria-label="Inserir Comando"
+                    oninput="DeixarMaiusculo()" />
+            </li>
+            <li>
+                <button class="btn btn-success btn-sm mr-3" onclick="AdicionarComando()">
+                    Adicionar
+                </button>
+            </li>
+            <li>
+                <button id="resetmemory" class="btn btn-success btn-sm" style="width: max-content"
+                    onclick="ResetarMemoria()">
+                    Reset Memory
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row mt-5" id="Animacoes">
+        <div class="col-md-9 pt-3 pb-4" style="position: relative">
+            <svg class="JogoTela" width="100%" height="903" ng-class="'status' + ctrl.sim.status">
+                <!--Barramentos internos e externos -->
+                <rect id="Rct1" x="0" y="0" width="4" height="100%"></rect>
+                <rect id="Rct2" x="0" y="0" width="1200" height="4"></rect>
+                <rect id="Rct3" x="1200" y="0" width="4" height="100"></rect>
+                <rect id="Rct4" x="0" y="900" width="174" height="4"></rect>
+                <rect id="Rct5" x="1200" y="203" width="4" height="200"></rect>
+                <rect id="Rct6" x="1200" y="203" width="100%" height="4"></rect>
+                <rect id="Rct7" x="170" y="800" width="4" height="100"></rect>
+                <rect id="Rct8" x="95" y="450" width="4" height="150"></rect>
+                <rect id="Rct9" x="160" y="300" width="4" height="150"></rect>
+                <rect id="Rct10" x="270" y="300" width="4" height="200"></rect>
+                <rect id="Rct11" x="250" y="500" width="4" height="100"></rect>
+                <rect id="Rct12" x="0" y="400" width="1200" height="4"></rect>
+                <rect id="Rct13" x="251" y="500" width="350" height="4"></rect>
+                <rect id="Rct14" x="600" y="500" width="4" height="100"></rect>
+                <rect id="Rct15" x="95" y="450" width="650" height="4"></rect>
+                <rect id="Rct16" x="740" y="450" width="4" height="150"></rect>
+                <rect id="Rct17" x="1200" y="100" width="100%" height="4"></rect>
+                <rect id="Rct18" x="200" y="700" width="300" height="4"></rect>
+                <rect id="Rct19" x="0" y="250" width="100" height="4"></rect>
+                <rect id="Rct20" x="300" y="250" width="300" height="4"></rect>
+                <rect id="Rct21" x="700" y="250" width="100" height="4"></rect>
+                <rect id="Rct22" x="785" y="250" width="4" height="150"></rect>
+                <rect id="Rct23" x="600" y="250" width="200" height="4"></rect>
+                <rect id="Rct24" x="650" y="75" width="4" height="330"></rect>
+                <rect id="Rct25" x="510" y="0" width="4" height="50"></rect>
+                <rect id="Rct26" x="810" y="0" width="4" height="50"></rect>
+                <rect id="Rct27" x="110" y="0" width="4" height="50"></rect>
+                <rect id="Rct28" x="510" y="300" width="4" height="100"></rect>
+                <rect id="Rct29" x="150" y="70" width="600" height="4"></rect>
+                <rect id="Rct30" x="85" y="0" width="4" height="100"></rect>
+                <rect id="Rct31" x="700" y="700" width="503.8" height="4"></rect>
+                <rect id="Rct32" x="1200" y="600" width="4" height="100"></rect>
+                <rect id="Rct33" x="1200" y="600" width="100%" height="4"></rect>
+
+                <!--Componentes da estrutura CPU: Registradores, UC, ULA -->
+                <polygon class="StyleFont" id="PC" points=" 50 45, 160 45, 160 110, 50 110"></polygon>
+                <polygon class="StyleFont" id="subPC" points=" 100 55, 150 55, 150 100, 100 100"></polygon>
+                <polygon class="StyleFont" id="R3" points=" 400 200, 600 200, 600 300, 400 300"></polygon>
+                <polygon class="StyleFont" id="subR3" points=" 410 240, 590 240, 590 290, 410 290"></polygon>
+                <polygon class="StyleFont" id="IR" points=" 100 200, 300 200, 300 300, 100 300"></polygon>
+                <polygon class="StyleFont" id="subIR" points=" 110 240, 290 240, 290 290, 110 290"></polygon>
+                <polygon class="StyleFont" id="R4" points=" 700 200, 900 200, 900 300,700 300"></polygon>
+                <polygon class="StyleFont" id="subR4" points=" 710 240, 890 240, 890 290,710 290"></polygon>
+
+                <polygon class="StyleFont" id="R1" points="  400 50, 600 50, 600 150, 400, 150"></polygon>
+                <polygon class="StyleFont" id="subR1" points="  410 90, 590 90, 590 140, 410, 140"></polygon>
+
+                <polygon class="StyleFont" id="R2" points="  700 50, 900 50, 900 150, 700, 150"></polygon>
+                <polygon class="StyleFont" id="subR2" points="  710 90, 890 90, 890 140, 710, 140"></polygon>
+
+                <polygon class="StyleFont" id="UC" points=" 500 600, 800 600, 800 800, 500 800"></polygon>
+                <polygon class="StyleFont" id="subUC" points=" 510 670, 790 670, 790 790, 510 790"></polygon>
+
+                <polygon class="StyleFont" id="ULA"
+                    points=" 40 600, 150 600, 175 700, 200 600, 300 600, 260 800, 90 800"></polygon>
+                <polygon class="StyleFont" id="subULA1" points=" 50 620, 68 690, 168 690, 150 620"></polygon>
+                <polygon class="StyleFont" id="subULA2" points=" 200 620, 292 620, 277 690, 182 690"></polygon>
+
+                <text x="65" y="85" fill="black" id="text0">PC</text>
+                <text x="115" y="85" fill="black" id="input0">00</text>
+
+                <text x="490" y="75" fill="black" id="text1">R1</text>
+                <text x="480" y="120" fill="black" id="input1">0000</text>
+
+                <text x="790" y="75" fill="black" id="text2">R2</text>
+                <text x="780" y="120" fill="black" id="input2">0000</text>
+
+                <text x="490" y="225" fill="black" id="text3">R3</text>
+                <text x="480" y="270" fill="black" id="input3">0000</text>
+
+                <text x="790" y="225" fill="black" id="text4">R4</text>
+                <text x="780" y="270" fill="black" id="input4">0000</text>
+
+                <text x="190" y="225" fill="black" id="text5">IR</text>
+                <text x="180" y="270" fill="black" id="input5">####</text>
+
+                <text x="635" y="640" fill="black" id="text6">UC</text>
+                <text x="625" y="740" fill="black" id="input6">####</text>
+
+                <text x="155" y="750" fill="black" id="text7">ULA</text>
+                <text x="90" y="660" fill="black" id="input7_1">0000</text>
+                <text x="217" y="660" fill="black" id="input7_2">0000</text>
+            </svg>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-0">
+                    <div id="SeparatorRam">
+                        <svg width="10" height="850">
+                            <rect x="0" y="0" width="4" height="100%"></rect>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <table class="table table-striped">
+                        <thead id="IdentificadorDeDados" width="100">
+                            <tr>
+                                <th scope="col">Endereço</th>
+                                <th scope="col">Dados/Instruções</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="CorpoDeDados">
+                            <tr class="" id="tr1">
+                                <th id="th1" scope="row">1</th>
+                                <td id="td1"></td>
+                            </tr>
+                            <tr class="" id="tr2">
+                                <th id="th2" scope="row">2</th>
+                                <td id="td2"></td>
+                            </tr>
+                            <tr class="" id="tr3">
+                                <th id="th3" scope="row">3</th>
+                                <td id="td3"></td>
+                            </tr>
+                            <tr class="" id="tr4">
+                                <th id="th4" scope="row">4</th>
+                                <td id="td4"></td>
+                            </tr>
+                            <tr class="" id="tr5">
+                                <th id="th5" scope="row">5</th>
+                                <td id="td5"></td>
+                            </tr>
+                            <tr class="" id="tr6">
+                                <th id="th6" scope="row">6</th>
+                                <td id="td6"></td>
+                            </tr>
+                            <tr class="" id="tr7">
+                                <th id="th7" scope="row">7</th>
+                                <td id="td7"></td>
+                            </tr>
+                            <tr class="" id="tr8">
+                                <th id="th8" scope="row">8</th>
+                                <td id="td8"></td>
+                            </tr>
+                            <tr class="" id="tr9">
+                                <th id="th9" scope="row">9</th>
+                                <td id="td9"></td>
+                            </tr>
+                            <tr class="" id="tr10">
+                                <th id="th10" scope="row">10</th>
+                                <td id="td10"></td>
+                            </tr>
+                            <tr class="" id="tr11">
+                                <th id="th11" scope="row">11</th>
+                                <td id="td11"></td>
+                            </tr>
+                            <tr class="" id="tr12">
+                                <th id="th12" scope="row">12</th>
+                                <td id="td12"></td>
+                            </tr>
+                            <tr class="" id="tr13">
+                                <th id="th13" scope="row">13</th>
+                                <td id="td13"></td>
+                            </tr>
+                            <tr class="" id="tr14">
+                                <th id="th14" scope="row">14</th>
+                                <td id="td14"></td>
+                            </tr>
+                            <tr class="" id="tr15">
+                                <th id="th15" scope="row">15</th>
+                                <td id="td15"></td>
+                            </tr>
+                            <tr class="" id="tr16">
+                                <th id="th16" scope="row">16</th>
+                                <td id="td16"></td>
+                            </tr>
+                            <tr class="" id="tr17">
+                                <th id="th17" scope="row">17</th>
+                                <td id="td17"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="Instrucoes" class="classHidden">
+    <div id="div-container">
+        <h1>Uhuuuuu</h1>
+        <footer style="position: absolute; bottom: 20px; right: 0px; left: 0px;"">
+     <button
+      class=" btn btn-success btn-sm"
+            style="background-color: green; color: white; width: 120px; height: 50px; font-size: 1.5em;"
+            onclick="AlternarVisibilidade()">
+            Fechar
+            </button>
+        </footer>
+    </div>
+</div>
+<script type="text/javascript">
+    let InstrucoesDeEntrada = [];
+    let DadosDeEntrada = [];
+    let EnderecoInstrucaoDado = [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+    ];
+    let Instrucoes = ["LOAD", "STO", "ADD", "SUB", "DIV", "MULT"];
+    let Registradores = ["R1", "R2", "R3", "R4", "IR"];
+
+    let R1 = 0;
+    let R2 = 0;
+    let R3 = 0;
+    let R4 = 0;
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script src="~/js/BitSimulator.js"></script>
