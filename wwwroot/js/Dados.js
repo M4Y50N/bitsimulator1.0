@@ -1,9 +1,8 @@
 var ContadorDeValocidade = 0;
-document.getElementById("regulador").addEventListener('input', function () {
-	document.getElementById('delayContainer').textContent = this.value
+document.getElementById("regulador").addEventListener("input", function () {
+	document.getElementById("delayContainer").textContent = this.value;
 	ContadorDeValocidade += parseInt(this.value);
-})
-
+});
 
 let Regist = [],
 	IsRegistradorContar = 0,
@@ -25,7 +24,7 @@ function AdicionarComando() {
 	let valorDeInput = document.getElementById("EntradaDeInstrucao").value;
 	let InstrucaoDecomposta = valorDeInput.split(" ");
 	let contadorDeCond = 0;
-	if (contadorDeEnderecosCompletos != 17) {
+	if (contadorDeEnderecosCompletos != 16) {
 		for (let contador = 0; contador < Instrucoes.length; contador++) {
 			contadorDeCond += 1;
 			if (3 <= InstrucaoDecomposta.length <= 4) {
@@ -454,10 +453,10 @@ function AlternarVisibilidade() {
 }
 
 function ResetarMemoria() {
-	document.location.reload()
+	document.location.reload();
 	let tdAtual;
 
-	for (let index = 1; index < 17; index++) {
+	for (let index = 1; index < 16; index++) {
 		tdAtual = document.getElementById("td" + index);
 		tdAtual.innerHTML = "";
 	}

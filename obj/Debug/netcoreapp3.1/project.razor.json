@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Projeto\\BitSimulator\\BitSimulator.csproj",
+  "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\BitSimulator.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14392,42 +14392,42 @@
   "RootNamespace": "BitSimulator",
   "Documents": [
     {
-      "FilePath": "c:\\Projeto\\BitSimulator\\Views\\BitSimulator\\IndexWindow.cshtml",
-      "TargetPath": "Views\\BitSimulator\\IndexWindow.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Projeto\\BitSimulator\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Projeto\\BitSimulator\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Projeto\\BitSimulator\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Projeto\\BitSimulator\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Projeto\\BitSimulator\\Views\\Home\\IndexInstrucoes.cshtml",
-      "TargetPath": "Views\\Home\\IndexInstrucoes.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Projeto\\BitSimulator\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projeto\\BitSimulator\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\Views\\Home\\IndexInstrucoes.cshtml",
+      "TargetPath": "Views\\Home\\IndexInstrucoes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\Views\\BitSimulator\\IndexWindow.cshtml",
+      "TargetPath": "Views\\BitSimulator\\IndexWindow.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }

@@ -1,31 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projeto\\BitSimulator\\BitSimulator.csproj": {}
+    "C:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\BitSimulator.csproj": {}
   },
   "projects": {
-    "C:\\Projeto\\BitSimulator\\BitSimulator.csproj": {
+    "C:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\BitSimulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projeto\\BitSimulator\\BitSimulator.csproj",
+        "projectUniqueName": "C:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\BitSimulator.csproj",
         "projectName": "BitSimulator",
-        "projectPath": "C:\\Projeto\\BitSimulator\\BitSimulator.csproj",
-        "packagesPath": "C:\\Users\\adrian devid\\.nuget\\packages\\",
-        "outputPath": "C:\\Projeto\\BitSimulator\\obj\\",
+        "projectPath": "C:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\BitSimulator.csproj",
+        "packagesPath": "C:\\Users\\pethe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pethe\\OneDrive\\Documentos\\GitHub\\bitsimulator1.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\adrian devid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\pethe\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -47,6 +47,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.10, 3.1.10]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -55,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

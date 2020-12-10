@@ -1,5 +1,4 @@
-﻿
-//Percorre o endereço de memoria
+﻿//Percorre o endereço de memoria
 let ContadorDeInstrucoes = 1,
 	ContadorDeIndexDados = 0;
 
@@ -8,7 +7,7 @@ let DadosGeral = [];
 const ColetarDadosDasFuncionalidades = () => {
 	let ValorDoEndereco = "",
 		Instrucao = "";
-	for (let pos = 1; pos <= 17; pos++) {
+	for (let pos = 1; pos <= 16; pos++) {
 		(ValorDoEndereco = document
 			.getElementById("td" + pos)
 			.innerHTML.split(" ")),
