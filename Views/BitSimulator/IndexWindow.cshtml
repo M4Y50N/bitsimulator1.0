@@ -6,7 +6,7 @@
         <ul id="ul-navbar">
             <li>
                 <div style="color: white; font-size: 1.9em; font-weight: 600; box-sizing:content-box;">
-                    <a id="title-sistem" asp-action="index" asp-controller="Home">BitSimulator</a>
+                    <a id="title-sistem">BitSimulator</a>
                 </div>
             </li>
             <li class="li-navbar">
@@ -236,28 +236,28 @@
             <div style="margin-left: 20px">
                 <p style="color: black; font-size: 1.3em">
                     <strong>LOAD: </strong>
-                    É a busca do dado em um endereço que será carregado para o
-                    registrador.
+                    Busca um dado em um endereço de memória e posteriormente carrega esse dado para o
+                    &nbsp;&nbsp;&nbsp;registrador.
                 </p>
-                <p style="color: black; font-size: 1.3em">
-                    <strong> STO: </strong>
-                    É o armazenamento do dado que está no registrador para a memória
-                </p>
-
-                <p style="color: black; font-size: 1.3em">
-                    Na instrução LOAD, podemos pegar valores armazenados na memória, e
-                    inseri-los nos registradores, respeitando a ordem onde primeiro
-                    deve vir a instrução, em seguida o endereço da memória onde contém
-                    o valor e só em seguida o registrador onde será armazenado.
+                <p style="color: black; font-size: 1.3em; box-sizing: border-box;">
+                    Na instrução LOAD, podemos buscar valores armazenados na memória e
+                    inseri-los nos registradores, &nbsp;&nbsp;&nbsp;respeitando a seguinte ordem: primeiro
+                    deve vir a instrução, em seguida o endereço da memória que &nbsp;&nbsp;&nbsp;contém
+                    o valor e por fim, o registrador onde será armazenado o valor.
                 </p>
                 <p style="color: black; font-size: 1.1em">
                     <strong> Ex: LOAD 2 R1 </strong>
                 </p>
                 <p style="color: black; font-size: 1.3em">
-                    Já a instrução STO, acontece o contrário da instrução LOAD, pois
-                    agora pegaremos os valores no registrador e colocaremos no
-                    endereço, respeitando também a hierarquia onde primeiro vem
-                    instrução, em seguida o endereço e só após o registrador
+                    <strong> STO: </strong>
+                    Armazena um dado que está no registrador na memória.
+                </p>
+                <p style="color: black; font-size: 1.3em">
+                    Na instrução STO, acontece o oposto da instrução LOAD. Os valores que estão contidos nos
+                    &nbsp;&nbsp;&nbsp;registradores
+                    são armazenados nos endereços de memória, respeitando a seguinte hierarquia: primeiro
+                    &nbsp;&nbsp;&nbsp;vem
+                    instrução, em seguida o endereço de memória e por fim, o registrador.
                 </p>
                 <p style="color: black; font-size: 1.1em">
                     <strong>Ex: STO 2 R4 </strong>
@@ -268,34 +268,45 @@
             <div style="margin-left: 20px">
                 <p style="color: black; font-size: 1.3em">
                     <strong> ADD: </strong>
-                    Soma os valores armazenados nos registradores
+                    Soma os valores armazenados nos registradores.
+                </p>
+                <p style="color: black; font-size: 1.1em">
+                    <strong>&nbsp;&nbsp;&nbsp;Ex: ADD R2 R1 R4 </strong>
                 </p>
                 <p style="color: black; font-size: 1.3em">
                     <strong>SUB: </strong>
-                    Subtrai os valores armazenados nos registradores
+                    Subtrai os valores armazenados nos registradores.
+                </p>
+                <p style="color: black; font-size: 1.1em">
+                    <strong>&nbsp;&nbsp;&nbsp;Ex: SUB R1 R3 R2 </strong>
                 </p>
                 <p style="color: black; font-size: 1.3em">
                     <strong> MULT: </strong>
-                    Multiplica os valores armazenados nos registradores
+                    Multiplica os valores armazenados nos registradores.
+                </p>
+                <p style="color: black; font-size: 1.1em">
+                    <strong>&nbsp;&nbsp;&nbsp;Ex: MULT R1 R3 R4 </strong>
                 </p>
                 <p style="color: black; font-size: 1.3em">
                     <strong> DIV:</strong>
-                    Divide os valores armazenados nos registradores
+                    Divide os valores armazenados nos registradores.
+                </p>
+                <p style="color: black; font-size: 1.1em">
+                    <strong>&nbsp;&nbsp;&nbsp;Ex: DIV R4 R2 R1 </strong>
                 </p>
 
                 <p style="color: black; font-size: 1.3em">
-                    Dentro dos operandos (ADD, SUB. MULT e DIV), funcionará sempre da
-                    mesma forma, o primeiro e o segundo registrador (Rx e Rx,
-                    respectivamente, podendo ser o primeiro ao quarto registrador)
-                    receberão os valores a serem processados. Após a conclusão deste
-                    processo, o terceiro registrador (Rx) receberá o resultado da
-                    operação entre Rx e Rx.
+                    Dentro dos operandos (ADD, SUB, MULT e DIV) funcionará sempre da
+                    mesma forma, o primeiro e o &nbsp;&nbsp;&nbsp;segundo registrador (Rx<span>1</span> e
+                    Rx<span>2</span>,
+                    respectivamente, podendo ser do primeiro ao quarto registrador)
+                    &nbsp;&nbsp;&nbsp;receberão os valores a serem processados. Após a conclusão deste
+                    processo, o terceiro registrador &nbsp;&nbsp;&nbsp;(Rx3) receberá o resultado da
+                    operação entre Rx1 e Rx2.
                 </p>
-                <p style="color: black; font-size: 1.1em">
-                    <strong> Ex: MULT R1 R3 R4 </strong>
-                </p>
+                <br>
 
-                <h4>Registradores : R1, R2, R3, R4</h4>
+                <h2>Registradores: R1, R2, R3 e R4.</h2>
             </div>
         </div>
     </div>
